@@ -8,6 +8,7 @@ node_modules/
 dist/
 build/
 out/
+.next/
 coverage/
 
 # Logs
@@ -35,3 +36,6 @@ pnpm-debug.log*
 .cache/
 tmp/
 *.local
+
+# Local scratch files
+data/Untitled

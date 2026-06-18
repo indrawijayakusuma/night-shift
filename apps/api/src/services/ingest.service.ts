@@ -128,7 +128,7 @@ async function parseNightLogWithLlm(
     const result = await callLlmJson<LlmNightLogParseResult>(
       `You extract discrete hotel front-desk incidents from free-text night shift logs.
 Return JSON: { "incidents": [{ "room": string|null, "type": string, "description": string, "status": "resolved"|"unresolved"|"pending", "approximateHour": 0-23, "originalExcerpt": string }] }
-Preserve original language in description. Only extract facts stated in the log. Do not invent room numbers.`,
+Write description in English. Keep originalExcerpt verbatim from the log. Only extract facts stated in the log. Do not invent room numbers.`,
       `Night label: ${log.nightLabel}
 Target morning handover date: ${targetMorning}
 Timezone offset: ${timezone}

@@ -77,6 +77,7 @@ async function generateWithLlm(
     `You produce action-first hotel morning handover JSON for a front-desk manager.
 Output shape: { "summary": { "urgent": [], "pending": [], "fyi": [] }, "issues": [] }
 Each summary item and issue must include title, action, sourceIds (from input only), flags.
+Write all title and action text in English, even when source excerpts are in another language.
 Group by urgency: guest-blocking/safety → urgent, operational follow-ups → pending, resolved/FYI → fyi.
 Never invent facts or sourceIds. Preserve contradiction flags from input.`,
     `Target morning: ${targetMorning}
